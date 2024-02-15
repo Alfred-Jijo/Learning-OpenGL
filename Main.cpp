@@ -7,11 +7,8 @@
 #include"VBO.h"
 #include"EBO.h"
 
-
-
 // Vertices coordinates
-GLfloat Vertices[] =
-{
+GLfloat Vertices[] = {
 	-0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f, // Lower left corner
 	0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f, // Lower right corner
 	0.0f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f, // Upper corner
@@ -21,8 +18,7 @@ GLfloat Vertices[] =
 };
 
 // Indices for vertices order
-GLuint Indices[] =
-{
+GLuint Indices[] = {
 	0, 3, 5, // Lower left triangle
 	3, 2, 4, // Lower right triangle
 	5, 4, 1 // Upper triangle
@@ -30,8 +26,7 @@ GLuint Indices[] =
 
 
 
-int main()
-{
+int main() {
 	// Initialize GLFW
 	glfwInit();
 
@@ -45,8 +40,7 @@ int main()
 	// Create a GLFWwindow object of 800 by 800 pixels, naming it "OpenGL"
 	GLFWwindow* window = glfwCreateWindow(800, 800, "OpenGL", NULL, NULL);
 	// Error check if the window fails to create
-	if (window == NULL)
-	{
+	if (window == NULL) {
 		std::cout << "Failed to create GLFW window" << std::endl;
 		glfwTerminate();
 		return -1;
@@ -82,8 +76,7 @@ int main()
 
 
 	// Main while loop
-	while (!glfwWindowShouldClose(window))
-	{
+	while (!glfwWindowShouldClose(window)) {
 		// Specify the color of the background
 		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
 		// Clean the back buffer and assign the new color to it
