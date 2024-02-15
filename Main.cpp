@@ -60,21 +60,17 @@ int main()
 	// In this case the viewport goes from x = 0, y = 0, to x = 800, y = 800
 	glViewport(0, 0, 800, 800);
 
-
-
 	// Generates Shader object using shaders defualt.vert and default.frag
-	Shader ShaderProgram("default.vert", "default.frag");
-
-
+	Classes::Shader ShaderProgram("default.vert", "default.frag");
 
 	// Generates Vertex Array Object and binds it
-	VAO VAO1;
+	Classes::VAO VAO1;
 	VAO1.Bind();
 
 	// Generates Vertex Buffer Object and links it to vertices
-	VBO VBO1(Vertices, sizeof(Vertices));
+	Classes::VBO VBO1(Vertices, sizeof(Vertices));
 	// Generates Element Buffer Object and links it to indices
-	EBO EBO1(Indices, sizeof(Indices));
+	Classes::EBO EBO1(Indices, sizeof(Indices));
 
 	// Links VBO to VAO
 	VAO1.LinkVBO(VBO1, 0);
@@ -103,8 +99,6 @@ int main()
 		// Take care of all GLFW events
 		glfwPollEvents();
 	}
-
-
 
 	// Delete all the objects we've created
 	VAO1.Delete();
