@@ -76,6 +76,8 @@ int main() {
 	VBO1.Unbind();
 	EBO1.Unbind();
 
+	// Gets ID of uniform called "scale"
+	GLuint uniID = glGetUniformLocation(ShaderProgram.ID, "scale");
 
 
 	// Main while loop
@@ -86,6 +88,8 @@ int main() {
 		glClear(GL_COLOR_BUFFER_BIT);
 		// Tell OpenGL which Shader Program we want to use
 		ShaderProgram.Activate();
+		// Assigns a value to the uniform; NOTE: Must always be done after activating the Shader Program
+		glUniform1f(uniID, 0.5f);
 		// Bind the VAO so OpenGL knows to use it
 		VAO1.Bind();
 		// Draw primitives, number of indices, datatype of indices, index of indices
