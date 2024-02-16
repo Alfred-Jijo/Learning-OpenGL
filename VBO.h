@@ -2,8 +2,8 @@
 
 #include<glad/glad.h>
 
-namespace Classes {
-	class VBO {
+
+class VBO {
 	public:
 		// Reference ID of the Vertex Buffer Object
 		GLuint ID;
@@ -16,5 +16,4 @@ namespace Classes {
 		void Unbind();
 		// Deletes the VBO
 		void Delete();
-	};
-}
+};

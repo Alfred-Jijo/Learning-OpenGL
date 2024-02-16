@@ -2,8 +2,7 @@
 
 #include<glad/glad.h>
 
-namespace Classes {
-	class EBO {
+class EBO {
 	public:
 		// ID reference of Elements Buffer Object
 		GLuint ID;
@@ -16,5 +15,4 @@ namespace Classes {
 		void Unbind();
 		// Deletes the EBO
 		void Delete();
-	};
-}
+};

@@ -9,8 +9,8 @@
 
 std::string GetFileContents(const char* Filename);
 
-namespace Classes {
-	class Shader {
+
+class Shader {
 	public:
 		// Reference ID of the Shader Program
 		GLuint ID;
@@ -21,5 +21,4 @@ namespace Classes {
 		void Activate();
 		// Deletes the Shader Program
 		void Delete();
-	};
-}
+};

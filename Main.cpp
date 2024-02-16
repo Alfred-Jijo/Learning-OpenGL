@@ -55,16 +55,16 @@ int main() {
 	glViewport(0, 0, 800, 800);
 
 	// Generates Shader object using shaders defualt.vert and default.frag
-	Classes::Shader ShaderProgram("default.vert", "default.frag");
+	Shader ShaderProgram("default.vert", "default.frag");
 
 	// Generates Vertex Array Object and binds it
-	Classes::VAO VAO1;
+	VAO VAO1;
 	VAO1.Bind();
 
 	// Generates Vertex Buffer Object and links it to vertices
-	Classes::VBO VBO1(Vertices, sizeof(Vertices));
+	VBO VBO1(Vertices, sizeof(Vertices));
 	// Generates Element Buffer Object and links it to indices
-	Classes::EBO EBO1(Indices, sizeof(Indices));
+	EBO EBO1(Indices, sizeof(Indices));
 
 	// Links VBO to VAO
 	VAO1.LinkVBO(VBO1, 0);

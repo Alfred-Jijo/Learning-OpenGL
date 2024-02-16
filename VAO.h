@@ -3,8 +3,8 @@
 #include<glad/glad.h>
 #include"VBO.h"
 
-namespace Classes {
-	class VAO {
+
+class VAO {
 	public:
 		// ID reference for the Vertex Array Object
 		GLuint ID;
@@ -19,5 +19,4 @@ namespace Classes {
 		void Unbind();
 		// Deletes the VAO
 		void Delete();
-	};
-}
+};
