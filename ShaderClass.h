@@ -17,6 +17,8 @@ class Shader {
 		// Constructor that build the Shader Program from 2 different shaders
 		Shader(const char* VertexFile, const char* FragmentFile);
 
+		void CompileErrors(unsigned int shader, const char* type);
+
 		// Activates the Shader Program
 		void Activate();
 		// Deletes the Shader Program
