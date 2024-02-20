@@ -19,6 +19,6 @@ public:
 	// Unbinds a texture
 	void Unbind();
 	// Deletes a texture
-	void Delete();
+	void Delete() const;
 };
 #endif

@@ -1,11 +1,9 @@
 #include "ShaderClass.h"
 
 // Reads a text file and outputs a string with everything in the text file
-std::string GetFileContents(const char* Filename)
-{
+std::string GetFileContents(const char* Filename) {
 	std::ifstream in(Filename, std::ios::binary);
-	if (in)
-	{
+	if (in) {
 		std::string contents;
 		in.seekg(0, std::ios::end);
 		contents.resize(in.tellg());
@@ -18,8 +16,7 @@ std::string GetFileContents(const char* Filename)
 }
 
 // Constructor that build the Shader Program from 2 different shaders
-Shader::Shader(const char* VertexFile, const char* FragmentFile)
-{
+Shader::Shader(const char* VertexFile, const char* FragmentFile) {
 	// Read vertexFile and fragmentFile and store the strings
 	std::string VertexCode = GetFileContents(VertexFile);
 	std::string FragmentCode = GetFileContents(FragmentFile);
@@ -86,13 +83,11 @@ void Shader::CompileErrors(unsigned int shader, const char* type) {
 }
 
 // Activates the Shader Program
-void Shader::Activate()
-{
+void Shader::Activate() {
 	glUseProgram(ID);
 }
 
 // Deletes the Shader Program
-void Shader::Delete()
-{
+void Shader::Delete() {
 	glDeleteProgram(ID);
 }

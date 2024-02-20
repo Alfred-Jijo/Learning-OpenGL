@@ -2,6 +2,9 @@
 #include<glad/glad.h>
 #include<GLFW/glfw3.h>
 #include<stb/stb_image.h>
+#include<glm/glm.hpp>
+#include<glm/gtc/matrix_transform.hpp>
+#include<glm/gtc/type_ptr.hpp>
 
 #include"ShaderClass.h"
 #include"VAO.h"
@@ -79,7 +82,7 @@ int main() {
 	// Gets ID of uniform called "scale"
 	GLuint uniID = glGetUniformLocation(ShaderProgram.ID, "scale");
 
-	Texture PopCat("popcat.png", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGBA, GL_UNSIGNED_BYTE);
+	Texture PopCat("popcat.png", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGB, GL_UNSIGNED_BYTE);
 	PopCat.TexUnit(ShaderProgram, "tex0", 0);
 
 	// Main while loop
@@ -90,7 +93,8 @@ int main() {
 		glClear(GL_COLOR_BUFFER_BIT);
 		// Tell OpenGL which Shader Program we want to use
 		ShaderProgram.Activate();
-		// Assigns a value to the uniform; NOTE: Must always be done after activating the Shader Program
+		// Assigns a value to the uniform; 
+		/// NOTE: Must always be done after activating the Shader Program
 		glUniform1f(uniID, 0.5f);
 		PopCat.Bind();
 		// Binds texture so that is appears in rendering

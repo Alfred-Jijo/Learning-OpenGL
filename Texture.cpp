@@ -57,6 +57,6 @@ void Texture::Unbind() {
 	glBindTexture(type, 0);
 }
 
-void Texture::Delete() {
+void Texture::Delete() const {
 	glDeleteTextures(1, &ID);
 }
